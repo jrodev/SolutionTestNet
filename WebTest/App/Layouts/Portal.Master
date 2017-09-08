@@ -1,0 +1,23 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Portal.master.vb" Inherits="WebTest.Portal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <script src="js/main.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <header>
+        <h3>Header App</h3>
+    </header>
+    <div>
+        <asp:ContentPlaceHolder ID="ContentMain" runat="server"></asp:ContentPlaceHolder>
+    </div>
+    <footer>
+        <p style="text-align:center">2017</p>
+    </footer>
+</body>
+</html>
+ 
