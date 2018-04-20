@@ -124,7 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Libraries\DASql.cs" />
+    <Compile Include="App\Libraries\RijndaelManagedEncryption.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -136,6 +138,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Views\Layout\_LayoutPortal.cshtml" />
+    <Content Include="Views\Layout\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Pages\Portal\Home\Index.cshtml" />
+    <Content Include="Views\Pages\Portal\_ViewStart.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,8 +151,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Pages\Admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
