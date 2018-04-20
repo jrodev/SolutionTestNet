@@ -126,7 +126,10 @@
     <Compile Include="App\Libraries\DASql.cs" />
     <Compile Include="App\Libraries\RijndaelManagedEncryption.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Engine\ThemeViewEngine.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -142,6 +145,8 @@
     <Content Include="Views\Layout\_LayoutAdmin.cshtml" />
     <Content Include="Views\Pages\Portal\Home\Index.cshtml" />
     <Content Include="Views\Pages\Portal\_ViewStart.cshtml" />
+    <Content Include="Areas\Portal\Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -151,6 +156,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Portal\Controllers\" />
+    <Folder Include="Areas\Portal\Models\" />
+    <Folder Include="Areas\Portal\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Pages\Admin\" />
   </ItemGroup>

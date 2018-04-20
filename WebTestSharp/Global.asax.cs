@@ -13,6 +13,17 @@ namespace WebTestSharp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            RazorViewEngine razorEngine = ViewEngines.Engines.OfType<RazorViewEngine>().FirstOrDefault();
+            if (razorEngine != null)
+            {
+                var newPartialViewFormats = new[] {
+                    "~/Views/{1}/Partials/{0}.cshtml",
+                    "~/Views/Shared/Partials/{0}.cshtml"
+                };
+                razorEngine.PartialViewLocationFormats = razorEngine.PartialViewLocationFormats.Union(newPartialViewFormats).ToArray();
+            }
+
         }
     }
 }
