@@ -129,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App\Libraries\DASql.cs" />
-    <Compile Include="App\Libraries\RijndaelManagedEncryption.cs" />
+<<<<<<< HEAD
     <Compile Include="App\www\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -137,6 +137,9 @@
     <Compile Include="App\www\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+=======
+    <Compile Include="App\Libraries\RijndaelManagedEncryption.cs" />
+>>>>>>> d456c08b58556e5280bec73ffee3a2349d7fc1be
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
@@ -168,7 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
