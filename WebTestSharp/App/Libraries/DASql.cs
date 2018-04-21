@@ -51,7 +51,7 @@ namespace DataAccess
             using (SqlCommand cmd = _cn.CreateCommand())
             {
                 cmd.CommandType = (CommandType)dCmdType[sCmdType];
-                cmd.CommandText = sCmdType == "table" ? "SELECT * FROM " : "" + sCmdSql;
+                cmd.CommandText = ((sCmdType=="table") ? "SELECT * FROM " : "") + sCmdSql;
 
                 // Aunq se defina sCmdType como 'sp' no garantiza que tendra parametros
                 if ((dParams != null))
@@ -82,8 +82,7 @@ namespace DataAccess
                         } catch (Exception ex) {
                             throw ex;
                         }
-
-                        break;
+                        //break;
                     case "Scalar":
                         // Retornando un valor tipo Object
                         object resScalar = cmd.ExecuteScalar();
