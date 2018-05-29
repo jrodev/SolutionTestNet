@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace WebTestSharp.App.Libraries
+namespace ConsoleTestSharp.Libraries
 {
     public class RijndaelManagedEncryption
     {
@@ -32,17 +32,25 @@ namespace WebTestSharp.App.Libraries
             var aesAlg = NewRijndaelManaged(salt);
 
             var encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-            var msEncrypt = new MemoryStream();
-            using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+
+            string result = ""; bool b;
+            using (var msEncrypt = new MemoryStream())
             {
-                using (var swEncrypt = new StreamWriter(csEncrypt))
+                using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
                 {
-                    swEncrypt.Write(text);
-                    csEncrypt.FlushFinalBlock();
+                    using (var swEncrypt = new StreamWriter(csEncrypt))
+                    {
+                        swEncrypt.Write(text);
+                        b = csEncrypt.HasFlushedFinalBlock;
+                        //csEncrypt.FlushFinalBlock();
+                    }
+                    b = csEncrypt.HasFlushedFinalBlock;
+                    //csEncrypt.FlushFinalBlock();
                 }
+                result = Convert.ToBase64String(msEncrypt.ToArray());
             }
             
-            return Convert.ToBase64String(msEncrypt.ToArray());
+            return result;
         }
         #endregion
 
@@ -88,7 +96,6 @@ namespace WebTestSharp.App.Libraries
                     {
                         text = srDecrypt.ReadToEnd();
                     }
-                    csDecrypt.FlushFinalBlock();
                 }
             }
             return text;
@@ -108,6 +115,7 @@ namespace WebTestSharp.App.Libraries
             var key = new Rfc2898DeriveBytes(Inputkey, saltBytes);
 
             var aesAlg = new RijndaelManaged();
+            aesAlg.Padding = PaddingMode.PKCS7;
             aesAlg.Key = key.GetBytes(aesAlg.KeySize / 8);
             aesAlg.IV = key.GetBytes(aesAlg.BlockSize / 8);
 

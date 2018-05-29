@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{6DDAD6FA-FE2D-4C3A-B81E-792B91196905}</ProjectGuid>
+    <ProjectGuid>{FCDB5461-0DF0-4BB4-8395-7A988370549E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WebTestSharp</RootNamespace>
-    <AssemblyName>WebTestSharp</AssemblyName>
+    <RootNamespace>WebTestBundleSourceMap</RootNamespace>
+    <AssemblyName>WebTestBundleSourceMap</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxMin, Version=5.14.5506.26196, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxMin.5.14.5506.26202\lib\net40\AjaxMin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AspNetBundling, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNetBundling.2.2.0\lib\net45\AspNetBundling.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -76,8 +89,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -89,6 +102,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -96,6 +113,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Web.Razor">
@@ -121,47 +142,55 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\run.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="scripts\ai.0.22.9-build00167.js" />
-    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="scripts\css\main.css" />
+    <Content Include="scripts\css\reset.css" />
+    <Content Include="scripts\js\belcorp\implements\youtube.js" />
+    <Content Include="scripts\js\belcorp\jquery.easy-pie-chart.js" />
+    <Content Include="scripts\js\belcorp\jquery.flexslider.js" />
+    <Content Include="scripts\js\belcorp\jquery.rateyo.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\Bienvenida\Estrategia.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\Bienvenida\Index.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\CatalogoPersonalizado\catalogoPersonalizado.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\Cupon\Cupon.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\Cupon\CuponModule.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\EstrategiaPersonalizada\EstrategiaAccion.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\EstrategiaPersonalizada\LocalStorage.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\EstrategiaProducto\DetalleProducto.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\Mobile\CatalogoPersonalizado\bootstrap-slider.min.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\Pedido\barra.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\RevistaDigital\RevistaDigital-DataLayer.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\RevistaDigital\RevistaDigital-Suscripcion.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\RevistaDigital\RevistaDigital-SuscripcionPopup.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\ShowRoom\ShowRoom.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\TagManager\Home-Pedido.js" />
+    <Content Include="scripts\js\belcorp\PortalConsultoras\TagManager\Liquidacion.js" />
+    <Content Include="scripts\js\belcorp\youtube.js" />
+    <Content Include="scripts\js\extra.js" />
+    <Content Include="scripts\js\main.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App\Libraries\AESAlgorithm.cs" />
-    <Compile Include="App\Libraries\DASql.cs" />
-    <Compile Include="App\Libraries\RijndaelManagedEncryption.cs" />
-    <Compile Include="App\run.aspx.cs">
-      <DependentUpon>run.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="App\run.aspx.designer.cs">
-      <DependentUpon>run.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
-    <Compile Include="Areas\Portal\PortalAreaRegistration.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Engine\ThemeViewEngine.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\web.config" />
-    <Content Include="packages.config">
+    <Content Include="Views\web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Views\Layout\_LayoutPortal.cshtml" />
-    <Content Include="Views\Layout\_LayoutAdmin.cshtml" />
-    <Content Include="Views\Pages\Portal\Home\Index.cshtml" />
-    <Content Include="Views\Pages\Portal\_ViewStart.cshtml" />
-    <Content Include="Areas\Portal\Views\web.config" />
-    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Views\Index\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\local-bundle-sourcemap.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -171,14 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
-    <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Areas\Portal\Controllers\" />
-    <Folder Include="Areas\Portal\Models\" />
-    <Folder Include="Areas\Portal\Views\Shared\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Pages\Admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -193,9 +215,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50004</DevelopmentServerPort>
+          <DevelopmentServerPort>35686</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:50004/</IISUrl>
+          <IISUrl>http://localhost:35686/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

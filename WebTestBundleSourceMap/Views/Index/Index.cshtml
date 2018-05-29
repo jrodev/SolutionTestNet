@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @Styles.Render("~/css/allcss")
+    <title>Test Bundle</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/stacktrace.js/2.0.0/stacktrace-with-promises-and-json-polyfills.min.js"></script>
+    <script>
+        var callback = function(stackframes, error) {
+            //console.log("callback->arguments:", arguments);
+            var stringifiedStack = stackframes.map(function(sf) {
+                return sf.toString();
+            }).join('\n');
+            console.log("callback->stringifiedStack:\n", error+'\n'+stringifiedStack);
+        };
+
+        var errback = function(err) {
+            console.log("errback->err.message:", err.message);
+        };
+
+        window.onerror = function(msg, file, line, col, error) {
+            console.log("onerror->arguments", arguments);
+            //console.log("onerror->error", error);
+            // callback is called with an Array[StackFrame]
+            StackTrace.fromError(error).then(function(stackframes){
+                callback(stackframes, error);
+            }).catch(errback);
+            //StackTrace.report(stackframes, url, message).then(callback).catch(errback);
+        };
+
+        /*
+        // Trace de la ejecucion actual
+        var prmse = StackTrace.get().then(callback).catch(errback);
+        // ----------------------------------
+        prmse.then(function(result) {
+            console.log("Stuff worked!", result); // "Stuff worked!"
+        }, function(err) {
+            console.log('Error: "It broke"', err); // Error: "It broke"
+        });*/
+    </script>
+</head>
+<body>
+    <h3 id="h3Tit"></h3>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--@@Scripts.Render("~/bundles/JsSB2-Bienvenida")-->
+    <!--script src="js/all.min.js"></script-->
+    @Scripts.Render("~/js/alljs")
+</body>
+</html>
+
