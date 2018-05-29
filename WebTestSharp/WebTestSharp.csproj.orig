@@ -76,8 +76,13 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+<<<<<<< HEAD
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+=======
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+>>>>>>> 93be74b1e1487af990dda1b42ffd4c6e7871b757
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -121,7 +126,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="App\run.aspx" />
+=======
+    <Content Include="App\www\index.aspx" />
+>>>>>>> 93be74b1e1487af990dda1b42ffd4c6e7871b757
     <Content Include="Global.asax" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
@@ -131,12 +140,21 @@
     <Compile Include="App\Libraries\AESAlgorithm.cs" />
     <Compile Include="App\Libraries\DASql.cs" />
     <Compile Include="App\Libraries\RijndaelManagedEncryption.cs" />
+<<<<<<< HEAD
     <Compile Include="App\run.aspx.cs">
       <DependentUpon>run.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="App\run.aspx.designer.cs">
       <DependentUpon>run.aspx</DependentUpon>
+=======
+    <Compile Include="App\www\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App\www\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+>>>>>>> 93be74b1e1487af990dda1b42ffd4c6e7871b757
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
