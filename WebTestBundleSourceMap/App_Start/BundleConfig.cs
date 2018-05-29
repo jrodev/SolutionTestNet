@@ -35,29 +35,6 @@ namespace WebTestBundleSourceMap
                 "~/scripts/css/main.css"
             ));
 
-            bundles.Add(new ScriptWithSourceMapBundle("~/bundles/JsSB2-Bienvenida").Include(
-                "~/scripts/js/belcorp/implements/youtube.js",
-                "~/scripts/js/belcorp/PortalConsultoras/Bienvenida/Index.js",
-                "~/scripts/js/belcorp/PortalConsultoras/Pedido/barra.js",
-                "~/scripts/js/belcorp/PortalConsultoras/CatalogoPersonalizado/CatalogoPersonalizado.js",
-                "~/scripts/js/belcorp/PortalConsultoras/Bienvenida/Estrategia.js",
-                "~/scripts/js/belcorp/PortalConsultoras/ShowRoom/ShowRoom.js",
-                "~/scripts/js/belcorp/PortalConsultoras/RevistaDigital/RevistaDigital-DataLayer.js",
-                "~/scripts/js/belcorp/PortalConsultoras/RevistaDigital/RevistaDigital-Suscripcion.js",
-                "~/scripts/js/belcorp/PortalConsultoras/RevistaDigital/RevistaDigital-SuscripcionPopup.js",
-                "~/scripts/js/belcorp/PortalConsultoras/Cupon/CuponModule.js",
-                "~/scripts/js/belcorp/PortalConsultoras/Cupon/Cupon.js",
-                "~/scripts/js/belcorp/PortalConsultoras/EstrategiaPersonalizada/EstrategiaAccion.js",
-                "~/scripts/js/belcorp/PortalConsultoras/EstrategiaPersonalizada/LocalStorage.js",
-                "~/scripts/js/belcorp/PortalConsultoras/TagManager/Home-Pedido.js",
-                "~/scripts/js/belcorp/PortalConsultoras/TagManager/Liquidacion.js",
-                "~/scripts/js/belcorp/PortalConsultoras/EstrategiaProducto/DetalleProducto.js",
-                "~/scripts/js/belcorp/jquery.flexslider.js",
-                "~/scripts/js/belcorp/jquery.rateyo.js",
-                "~/scripts/js/belcorp/jquery.easy-pie-chart.js",
-                "~/scripts/js/belcorp/PortalConsultoras/Mobile/CatalogoPersonalizado/bootstrap-slider.min.js"
-            ));
-
             #if DEBUG
             BundleTable.EnableOptimizations = true; // Habilitar o no, la minificacion y union
             #else
