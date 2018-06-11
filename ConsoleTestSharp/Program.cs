@@ -1,4 +1,5 @@
 ﻿using ConsoleTestSharp.Libraries;
+using ConsoleTestSharp.Testing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,12 @@ namespace ConsoleTestSharp
 
         static void Main(string[] args)
         {
+
+            Console.Read();
+            HttpPost.send();
+
+            return ;
+
             string salt = "";
             string textNormal = "hola_";
             string textEncrip = "";
